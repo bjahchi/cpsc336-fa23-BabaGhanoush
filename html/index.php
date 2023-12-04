@@ -6,17 +6,8 @@
 <html>
     <h1>Counter</h1>
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "baba";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if($conn->connect_error) {
-        die("connection failed: ". $conn->connect_error);
-    }
-    echo "Connection Successfully <br>";
+    
+    include 'connection.php';
 
 
     $sql = "SELECT * FROM People";
@@ -35,9 +26,11 @@
 
     ?>
     
-    <form>
-    <button>ADD</button>
-    <button>SUBTRACT</button>
-    <button>RESET</button>
+    <form method="post" action="add.php">
+        <button type="submit" name="operation" value="add">ADD</button>
+        <button type="submit" name="operation" value="subtract">SUBTRACT</button>
+        <button type="submit" name="operation" value="reset">RESET</button>
+    </form>
+    
 </html>
 
