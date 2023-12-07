@@ -16,7 +16,9 @@
     if($result->num_rows > 0) {
         $row = $result -> fetch_assoc();
 
-        echo "People Count: ".$row["PeopleCount"]."<br>";
+        echo "People Count: ";
+        $var = $row["PeopleCount"]."<br>";
+        echo "<span style='font-size:100pt'>$var</span>";
     } else {
         echo "No result";
     }
